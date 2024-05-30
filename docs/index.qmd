@@ -1,0 +1,50 @@
+---
+title: "Capstone Project Template"
+subtitle: "Here goes a subtitle"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+author:
+  - name: Colin Walder
+    orcid: 0009-0006-0969-1954
+    email: cwalder@ethz.ch
+    affiliation: 
+      - name: ETH Zürich
+        url: www.ethz.ch
+abstract: > 
+  
+keywords:
+  - Keyword 1
+  - Keyword 2
+  - Keyword 3
+  - Keyword 4
+  
+format:
+  html:
+    toc: true
+    html-math-method: katex
+    css: styles.css
+    
+
+license: "CC BY"
+---
+
+```{r, setup}
+#| message: false
+#| warning: false
+
+library(tidyverse)
+```
+
+```{r}
+#| label: fig-starwars
+#| fig-cap: A few penguins
+starwars |> 
+  drop_na() |> 
+  ggplot(aes(x = height, y = mass, color = gender, size = mass)) + 
+  geom_point() + 
+  theme_minimal() +
+  labs(x = "Mass",
+       y = "Height (in cm)",
+       color = "Gender",
+       size = "Mass")
+```
+
